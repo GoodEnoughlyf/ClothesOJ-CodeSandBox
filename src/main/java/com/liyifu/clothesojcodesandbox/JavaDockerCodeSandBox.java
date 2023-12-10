@@ -153,7 +153,6 @@ public class JavaDockerCodeSandBox implements CodeSandBox {
                         errorDockerMessage[0] = new String(frame.getPayload());
                         System.out.println("输出错误结果：" + errorDockerMessage[0]);
                     } else {
-                        // todo 为啥getPayload（）会加换行符
                         messageDocker[0] = new String(frame.getPayload());
                         System.out.println("输出结果：" + messageDocker[0]);
                     }
