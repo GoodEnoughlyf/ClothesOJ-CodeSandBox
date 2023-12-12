@@ -275,6 +275,7 @@ public class JavaDockerCodeSandBox implements CodeSandBox {
     //测试 main函数
     public static void main(String[] args) {
         JavaDockerCodeSandBox javaDockerCodeSandbox = new JavaDockerCodeSandBox();
+//        JavaNativeCodeSandBox javaNativeCodeSandBox = new JavaNativeCodeSandBox();
         ExecuteCodeRequest executeCodeRequest = new ExecuteCodeRequest();
         executeCodeRequest.setInputList(Arrays.asList("1 2", "3 4"));
         String code = ResourceUtil.readStr("testCode/simpleComputeArgs/Main.java", StandardCharsets.UTF_8);   //hutool工具包中可以读取resource文件内容

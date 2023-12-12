@@ -33,8 +33,10 @@ public class ProcessUtil {
                 //逐行读取
                 String compileOutputLine;
                 while((compileOutputLine= bufferedReader.readLine())!=null){
-                    compileOutputStringBuilder.append(compileOutputLine).append("\n");
+//                    compileOutputStringBuilder.append(compileOutputLine).append("\n");
+                    compileOutputStringBuilder.append(compileOutputLine);
                 }
+                System.out.println("hhhhh"+compileOutputStringBuilder);
                 executeMessage.setMessage(compileOutputStringBuilder.toString());
             }else { //异常退出
                 System.out.println(optionName+"失败，错误码："+exitValue);
@@ -44,9 +46,11 @@ public class ProcessUtil {
                 //逐行读取
                 String compileOutputLine;
                 while((compileOutputLine= bufferedReader.readLine())!=null){
-                    compileOutputStringBuilder.append(compileOutputLine).append("\n");
+//                    compileOutputStringBuilder.append(compileOutputLine).append("\n");
+                    compileOutputStringBuilder.append(compileOutputLine);
                 }
-                executeMessage.setErrMessage(compileOutputStringBuilder.toString());
+                System.out.println("hhhhh"+compileOutputStringBuilder);
+                executeMessage.setMessage(compileOutputStringBuilder.toString());
 
                 //分批获取进程的错误输出
                 BufferedReader errorBufferedReader = new BufferedReader(new InputStreamReader(runProcess.getErrorStream()));

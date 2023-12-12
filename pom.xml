@@ -76,7 +76,7 @@
                 <version>${spring-boot.version}</version>
                 <configuration>
                     <mainClass>com.liyifu.clothesojcodesandbox.ClothesOjCodeSandBoxApplication</mainClass>
-                    <skip>true</skip>
+                    <skip>false</skip>
                 </configuration>
                 <executions>
                     <execution>

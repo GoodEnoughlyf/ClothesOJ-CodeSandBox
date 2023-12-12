@@ -9,6 +9,7 @@ import com.liyifu.clothesojcodesandbox.model.ExecuteCodeResponse;
 import com.liyifu.clothesojcodesandbox.model.ExecuteMessage;
 import com.liyifu.clothesojcodesandbox.model.JudgeInfo;
 import com.liyifu.clothesojcodesandbox.utils.ProcessUtil;
+import org.springframework.stereotype.Component;
 
 import java.io.BufferedReader;
 import java.io.File;
@@ -22,6 +23,7 @@ import java.util.List;
 /**
  * 本地代码沙箱  （本地不安全，该类作为测试）
  */
+@Component
 public class JavaNativeCodeSandBox implements CodeSandBox{
     //存放用户代码的文件夹
     private static final String GLOBAL_CODE_DIR_NAME="tempCode";
@@ -143,10 +145,12 @@ public class JavaNativeCodeSandBox implements CodeSandBox{
     public static void main(String[] args) {
         JavaNativeCodeSandBox javaNativeCodeSandBox = new JavaNativeCodeSandBox();
         ExecuteCodeRequest executeCodeRequest = new ExecuteCodeRequest();
-        executeCodeRequest.setInputList(Arrays.asList("1 2","3 4"));
+        executeCodeRequest.setInputList(Arrays.asList("121","-121"));
 
         //1、测试正常情况下调用本地代码沙箱
-        String code = ResourceUtil.readStr("testCode/simpleComputeArgs/Main.java", StandardCharsets.UTF_8);
+//        String code = ResourceUtil.readStr("testCode/simpleComputeArgs/Main.java", StandardCharsets.UTF_8);
+//                String code = ResourceUtil.readStr("testCode/simpleComputeArgs/Main.java", StandardCharsets.UTF_8);
+        String code = ResourceUtil.readStr("testCode/huiwen/Main.java", StandardCharsets.UTF_8);
 //        System.out.println(code);
         executeCodeRequest.setCode(code);
         executeCodeRequest.setLanguage("java");
